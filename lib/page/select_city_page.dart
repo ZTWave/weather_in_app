@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -24,8 +25,6 @@ class SelectCityPageState extends State<SelectCityPage> {
         _cityData = CityListModelEntity().fromJson(jsonDecode(data));
         _cityCount = _cityData.data.length;
       });
-
-      //print(_cityData.data[0].cityZh);
     });
   }
 
@@ -35,16 +34,23 @@ class SelectCityPageState extends State<SelectCityPage> {
       appBar: AppBar(
         title: Text("选择城市"),
       ),
-      body: Scrollbar(
-        child: ListView.separated(
-          itemCount: _cityCount,
-          itemBuilder: (BuildContext context, int index) {
-            return _buildCityItem(context, index);
-          },
-          separatorBuilder: (BuildContext context, int index) {
-            return Divider();
-          },
-        ),
+      body: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: <Widget>[
+          Expanded(
+            child: Container(
+              child: ListView.separated(
+                itemCount: _cityCount,
+                itemBuilder: (BuildContext context, int index) {
+                  return _buildCityItem(context, index);
+                },
+                separatorBuilder: (BuildContext context, int index) {
+                  return Divider();
+                },
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -57,7 +63,7 @@ class SelectCityPageState extends State<SelectCityPage> {
     return InkWell(
       onTap: () {
         print("tap $index");
-        Navigator.pop(context,_cityData.data[index]);
+        Navigator.pop(context, _cityData.data[index]);
       },
       child: Padding(
         padding: const EdgeInsets.all(12.0),
