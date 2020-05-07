@@ -5,6 +5,10 @@
 
 城市列表使用的是网站提供的城市json文件。  
 截图：  
+
+<img src="https://github.com/ZTWave/weather_in_app/blob/master/sceenshot/s_01.png" width="100" height="150" align="middle" />
+<img src="https://github.com/ZTWave/weather_in_app/blob/master/sceenshot/s_02.png" width="100" height="150" align="middle" />
+
 ![avatr](https://github.com/ZTWave/weather_in_app/blob/master/sceenshot/s_01.png)
 
 ![avatr](https://github.com/ZTWave/weather_in_app/blob/master/sceenshot/s_02.png)
